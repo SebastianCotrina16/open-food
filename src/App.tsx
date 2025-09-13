@@ -10,15 +10,12 @@ function App() {
 
   const handleCategorySelect = (categoryId: string) => {
     setSelectedCategory(categoryId)
-    // Smooth scroll to menu section
     const element = document.getElementById('menu-section')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
-    <div className='min-h-screen bg-white'>
+    <div className='min-h-screen bg-white dark:bg-slate-950 text-gray-900 dark:text-slate-100'>
       <Header
         onCategorySelect={handleCategorySelect}
         categories={categories}
@@ -26,7 +23,7 @@ function App() {
       />
       <Hero />
 
-      <main id='menu-section' className='bg-white'>
+      <main id='menu-section' className='bg-white dark:bg-slate-950'>
         {categories.map((category) => (
           <div
             key={category.id}
